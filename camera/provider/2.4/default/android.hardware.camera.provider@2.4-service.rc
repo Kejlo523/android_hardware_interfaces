@@ -1,6 +1,7 @@
 service vendor.camera-provider-2-4 /vendor/bin/hw/android.hardware.camera.provider@2.4-service
-    interface android.hardware.camera.provider@2.4::ICameraProvider legacy/0
+    interface android.hardware.camera.provider@2.4::ICameraProvider internal/0
     class hal
+    setenv LD_PRELOAD /vendor/lib/libcamera_legacy_ui_shim.so:/system/lib/libutilscallstack.so
     user cameraserver
     group audio camera input drmrpc
     ioprio rt 4

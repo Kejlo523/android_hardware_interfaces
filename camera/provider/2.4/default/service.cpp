@@ -37,16 +37,16 @@ const bool kLazyService = false;
 
 int main()
 {
-    ALOGI("CameraProvider@2.4 legacy service is starting.");
+    ALOGI("CameraProvider@2.4 internal service is starting.");
     // The camera HAL may communicate to other vendor components via
     // /dev/vndbinder
     android::ProcessState::initWithDriver("/dev/vndbinder");
     status_t status;
     if (kLazyService) {
-        status = defaultLazyPassthroughServiceImplementation<ICameraProvider>("legacy/0",
+        status = defaultLazyPassthroughServiceImplementation<ICameraProvider>("internal/0",
                                                                               /*maxThreads*/ 6);
     } else {
-        status = defaultPassthroughServiceImplementation<ICameraProvider>("legacy/0",
+        status = defaultPassthroughServiceImplementation<ICameraProvider>("internal/0",
                                                                           /*maxThreads*/ 6);
     }
     return status;
