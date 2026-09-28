@@ -40,6 +40,10 @@ cc_binary {
 
     init_rc: ["android.hardware.audio.service.rc"],
     relative_install_path: "hw",
+    // Samsung's legacy RILD authorizes the audio client by the historical
+    // android.hardware.audio@ process-name prefix. The a6lte device init
+    // override starts this same binary through that compatibility alias.
+    symlinks: ["android.hardware.audio@7.0-service"],
     vendor: true,
 
     defaults: [

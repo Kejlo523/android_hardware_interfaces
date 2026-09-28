@@ -32,6 +32,7 @@ vintf_compatibility_matrix {
 // Phony target that installs all system compatibility matrix files
 // These are the FCMs for in-development devices.
 SYSTEM_MATRIX_DEPS_A18 = [
+    "framework_compatibility_matrix.2.xml",
     "framework_compatibility_matrix.6.android17.xml",
     "framework_compatibility_matrix.7.xml",
     "framework_compatibility_matrix.8.xml",
@@ -44,6 +45,7 @@ SYSTEM_MATRIX_DEPS_A18 = [
 
 // These are the FCMs that are still supported during QPRs
 SYSTEM_MATRIX_DEPS_A17 = [
+    "framework_compatibility_matrix.2.xml",
     "framework_compatibility_matrix.6.android17.xml",
     "framework_compatibility_matrix.7.xml",
     "framework_compatibility_matrix.8.xml",
@@ -85,6 +87,14 @@ phony {
 // AUTO GENERATED MODULES
 // DO NOT ADD MORE MODULES BELOW THIS LINE
 ////////////////////////////////////////////
+
+vintf_compatibility_matrix {
+    name: "framework_compatibility_matrix.2.xml",
+    stem: "compatibility_matrix.2.xml",
+    srcs: [
+        "compatibility_matrix.2.xml",
+    ],
+}
 
 vintf_compatibility_matrix {
     name: "framework_compatibility_matrix.6.android17.xml",
